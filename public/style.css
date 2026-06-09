@@ -1,0 +1,220 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.accent { color: #e6edf3; }
+.muted { color: #8b949e; }
+
+.subtitle {
+  margin-top: 8px;
+  color: #8b949e;
+  font-size: 16px;
+}
+
+/* Input */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#repoUrl {
+  flex: 1;
+  padding: 10px 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 15px;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#repoUrl:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+#repoUrl::placeholder {
+  color: #484f58;
+}
+
+#generateBtn {
+  padding: 10px 24px;
+  background: #238636;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+#generateBtn:hover { background: #2ea043; }
+#generateBtn:active { background: #238636; }
+#generateBtn:disabled {
+  background: #21262d;
+  color: #484f58;
+  cursor: not-allowed;
+}
+
+/* Status */
+#status {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+#status.hidden { display: none; }
+#status.error {
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  color: #f85149;
+}
+#status.success {
+  background: rgba(63, 185, 80, 0.1);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  color: #3fb950;
+}
+#status.loading {
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  color: #58a6ff;
+}
+
+/* Result */
+#result.hidden { display: none; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px 6px 0 0;
+}
+
+.toolbar h2 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#lineCount {
+  font-size: 12px;
+}
+
+.toolbar-actions button {
+  padding: 5px 14px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.toolbar-actions button:hover { background: #30363d; }
+.toolbar-actions button:active { background: #21262d; }
+
+#preview {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 24px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 13px;
+}
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+/* Badge */
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge.backend {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.badge.pages {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.badge.loading {
+  background: rgba(139, 148, 158, 0.15);
+  color: #8b949e;
+  border: 1px solid rgba(139, 148, 158, 0.3);
+}
+
+/* Scrollbar */
+#preview::-webkit-scrollbar { width: 8px; }
+#preview::-webkit-scrollbar-track { background: #161b22; }
+#preview::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }

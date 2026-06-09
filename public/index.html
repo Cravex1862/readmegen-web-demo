@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>readmegen demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span class="accent">readmegen</span> <span class="muted">demo</span></h1>
+      <p class="subtitle">Paste any GitHub repo URL to generate its README.md</p>
+      <span id="envBadge" class="badge">Loading...</span>
+    </header>
+
+    <div class="input-row">
+      <input type="text" id="repoUrl" placeholder="e.g. https://github.com/owner/repo" spellcheck="false">
+      <button id="generateBtn">Generate</button>
+    </div>
+
+    <div id="status" class="hidden"></div>
+
+    <div id="result" class="hidden">
+      <div class="toolbar">
+        <h2>README.md</h2>
+        <div class="toolbar-actions">
+          <span id="lineCount" class="muted"></span>
+          <button id="copyBtn">Copy</button>
+          <button id="downloadBtn">Download</button>
+        </div>
+      </div>
+      <div id="preview"></div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/Cravex1862/readmegen" target="_blank">Cravex1862/readmegen</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
